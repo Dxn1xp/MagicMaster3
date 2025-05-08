@@ -5,11 +5,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.EightDir,
 		C3.Behaviors.scrollto,
 		C3.Plugins.Mouse,
-		C3.Behaviors.Pin,
 		C3.Plugins.Keyboard,
 		C3.Plugins.Tilemap,
 		C3.Behaviors.solid,
 		C3.Plugins.Browser,
+		C3.Behaviors.Pin,
+		C3.Plugins.Audio,
 		C3.Behaviors.EightDir.Cnds.IsMoving,
 		C3.Plugins.Sprite.Acts.SetAnimSpeed,
 		C3.Plugins.System.Cnds.Else,
@@ -22,9 +23,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.EightDir.Acts.SimulateControl,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Sprite.Cnds.OnCollision,
-		C3.Plugins.Sprite.Acts.Destroy,
-		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Behaviors.scrollto.Acts.SetEnabled,
+		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Mouse.Acts.SetCursor2,
 		C3.Plugins.Mouse.Acts.SetCursorSprite,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
@@ -33,25 +33,22 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Browser.Acts.GoToURLWindow,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Behaviors.EightDir.Acts.SetSpeed,
+		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.System.Cnds.EveryTick,
-		C3.Plugins.Mouse.Exps.X,
-		C3.Plugins.Mouse.Exps.Y,
 		C3.Plugins.Sprite.Acts.MoveAtAngle,
 		C3.Plugins.Sprite.Cnds.OnAnimFinished,
+		C3.Plugins.Audio.Acts.StopAll,
 		C3.Plugins.Sprite.Cnds.IsVisible,
 		C3.Behaviors.EightDir.Acts.Stop,
-		C3.Plugins.System.Acts.CreateObject
+		C3.Plugins.Audio.Acts.Play
 	];
 };
 self.C3_JsPropNameTable = [
 	{direcao: 0},
 	{"8Direções": 0},
-	{Protagonista: 0},
 	{CentrarEm: 0},
-	{Mira: 0},
+	{Protagonista: 0},
 	{Mouse: 0},
-	{Fixar: 0},
-	{Camera: 0},
 	{Teclado: 0},
 	{Sólido: 0},
 	{Mosaico: 0},
@@ -71,20 +68,21 @@ self.C3_JsPropNameTable = [
 	{começo: 0},
 	{trancado: 0},
 	{bau: 0},
+	{Fixar: 0},
 	{animacao: 0},
 	{Sprite: 0},
 	{fechado: 0},
 	{boss: 0},
 	{falaBOSS: 0},
 	{questão1: 0},
-	{Sprite2: 0}
+	{Sprite2: 0},
+	{Sprite4: 0},
+	{Áudio: 0}
 ];
 
 self.InstanceType = {
 	Protagonista: class extends self.ISpriteInstance {},
-	Mira: class extends self.ISpriteInstance {},
 	Mouse: class extends self.IInstance {},
-	Camera: class extends self.ISpriteInstance {},
 	Teclado: class extends self.IInstance {},
 	Mosaico: class extends self.ITilemapInstance {},
 	Sprite3: class extends self.ISpriteInstance {},
@@ -109,5 +107,7 @@ self.InstanceType = {
 	boss: class extends self.ISpriteInstance {},
 	falaBOSS: class extends self.ISpriteInstance {},
 	questão1: class extends self.ISpriteInstance {},
-	Sprite2: class extends self.ISpriteInstance {}
+	Sprite2: class extends self.ISpriteInstance {},
+	Sprite4: class extends self.ISpriteInstance {},
+	Áudio: class extends self.IInstance {}
 }
